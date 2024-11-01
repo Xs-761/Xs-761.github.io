@@ -3,8 +3,10 @@ output_dir: "."
 navbar:
   title: "Home"
   right:
-    - text: "About Me"
+    - text: "Secret Number"
       href: within_page.html
+    - text: "Dashboard"
+      href: dashboard.html
     - icon: fa-envelope fa-lg
       href: mailto:<zhangenju1999121@gmail.com>
     - icon: fa-github fa-lg
