@@ -19,7 +19,7 @@ output:
 
 ```
 
-```{r}
+```{r, include=FALSE, message=FALSE}
     
   # Get a list of all NY station IDs
   stations <- ghcnd_stations() %>% drop_na()
@@ -37,7 +37,7 @@ output:
 
 ```
 
-```{r}
+```{r, include=FALSE, message=FALSE}
 
   nydat = nydat %>% drop_na()
   nystationids = nystationids %>% drop_na()
