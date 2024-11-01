@@ -17,7 +17,7 @@ Hi! I am a graduate student in Biostatistics Department with a background in App
 <img src="images/02.jpg" style="width:75%">
 
 ## My Resume
-![](Resume.pdf)
+[View My Resume](Resume.pdf)
 
 ## Local Image
 
