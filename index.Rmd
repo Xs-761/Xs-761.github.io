@@ -27,7 +27,11 @@ Let's link to useful tools for data science:
 * [Google](http://www.google.com/)
 
 ## Local Image
-![](images/01.jpg)
+
+View
+
+<img src="images/01.jpg" style="width:50%">
+
 
 ## Link to page within the site
 
