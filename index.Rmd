@@ -1,24 +1,23 @@
 ---
-title: "My Website"
+title: "P8105_HW4_EZ2384"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-# This Page has information about me
+### Welcome to My Homepage!
 
-What if I did some text here...?
+Hi! I am a graduate student in Biostatistics Department with a background in Applied Mathematics. I’m passionate about using data to solve real-world problems and have experience in data analysis, cybersecurity, and business analytics. I love exploring new tools and techniques in data science to make meaningful insights. Outside of work and studies, you might find me enjoying a game of tennis or diving into a good book. Thanks for stopping by my page!
 
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+#### My Favoriate Time in a Day
+<img src="images/01.jpg" style="width:50%">
 
-## Here is a subsection
+#### My Hobby
+<img src="images/02.jpg" style="width:50%">
 
-And here's some addition text...
-
-```{r}
-rnorm(10)
-```
+#### My Lucky Number
+<img src="images/03.jpg" style="width:50%"> 
 
 ## Links
 
@@ -30,7 +29,7 @@ Let's link to useful tools for data science:
 
 View
 
-<img src="images/01.jpg" style="width:50%">
+
 
 
 ## Link to page within the site
