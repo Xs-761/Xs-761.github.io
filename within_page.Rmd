@@ -6,6 +6,8 @@ output:
     toc_float: true
 ---
 
+### This is a secret page!
 
-Check whether this page is successful
-![](images/01.jpg)
+and this is my lucky number:
+
+<img src="images/03.jpg" style="width:75%"> 
