@@ -2,7 +2,6 @@
 title: "Dashboard"
 output: 
   flexdashboard::flex_dashboard:
-    self_contained: false
     orientation: columns
     vertical_layout: fill
     source: embed
