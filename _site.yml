@@ -3,8 +3,8 @@ output_dir: "."
 navbar:
   title: "Home"
   right:
-    - text: "Secret Number"
-      href: within_page.html
+    - text: "R project sample"
+      href: r_proj.html
     - text: "Dashboard"
       href: dashboard.html
     - icon: fa-envelope fa-lg

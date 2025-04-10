@@ -5,9 +5,11 @@ output:
     orientation: columns
     vertical_layout: fill
     source: embed
+    navbar:
+      - { title: "🏠 Back to Homepage", href: "../index.html" }
 ---
 
-```{r setup, include=FALSE}
+```{r block1, include=FALSE}
 
   library(tidyverse)
   library(p8105.datasets)
@@ -19,26 +21,9 @@ output:
 
 ```
 
-```{r, include=FALSE, message=FALSE}
-    
-  # Get a list of all NY station IDs
-  stations <- ghcnd_stations() %>% drop_na()
-  nystationids <- stations %>% filter(state == "NY") %>% distinct(id)
-  
-  # Pull the desired weather data for all of these stations
-  nydat <- meteo_pull_monitors(nystationids$id, 
-                               date_min = "1981-01-01", 
-                               date_max = "2010-12-31", 
-                               var = c("PRCP", "SNOW", "SNWD", "TMAX", "TMIN"))
-  
-  # Save the resulting data
-  save(nystationids, nydat, file = "nynoaadat.RData")
+```{r block2, include=FALSE, message=FALSE, fig.height=7.5, fig.width=12.5}
 
-
-```
-
-```{r, include=FALSE, message=FALSE}
-
+  load("nynoaadat.RData")
   nydat = nydat %>% drop_na()
   nystationids = nystationids %>% drop_na()
   stations = stations %>% drop_na()
@@ -46,18 +31,16 @@ output:
 ```
 
 
-Column {data-width=650}
------------------------------------------------------------------------
 
-### Chart A
+### Spatial Distribution of NOAA GHCN Weather Stations by Elevation
 
-```{r Scatterplot}
+```{r block3, message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
   
   # Scatterplot of station locations with color representing elevation
   ggplot(stations, aes(x = longitude, y = latitude, color = elevation)) +
     geom_point(alpha = 0.7, size = 0.35) +
     scale_color_viridis_c(option = "C") +  # Use a color gradient suitable for elevation
-    labs(title = "Station Locations by Elevation",
+    labs(
          x = "Longitude",
          y = "Latitude",
          color = "Elevation (m)") +
@@ -67,18 +50,14 @@ Column {data-width=650}
 
 ```
 
+### Distribution of Weather Station Elevations Grouped by Recorded Element
 
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart B
-
-```{r Boxplot, fig.width=15, fig.height=12}
+```{r block4,message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
 
   # Boxplot of elevation by element
   ggplot(stations, aes(x = element, y = elevation)) +
     geom_boxplot(fill = "lightgreen", outlier.size = 0.5, outlier.alpha = 0.5) +
-    labs(title = "Elevation Distribution by Element",
+    labs(
          x = "Element",
          y = "Elevation (m)") +
     theme_minimal() +
@@ -89,9 +68,9 @@ Column {data-width=350}
 
 ```
 
-### Chart C
+### Temporal Coverage of Meteorological Elements in Global Station Records
 
-```{r}
+```{r block5, message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
 
   # Summarize data to get the number of stations recording each element by year
   yearly_counts <- stations %>%
@@ -102,13 +81,12 @@ Column {data-width=350}
 # Line plot of station counts by year for each element with no legend
   ggplot(yearly_counts, aes(x = first_year, y = station_count, color = element, size=0.5)) +
     geom_line(size = 0.4) +
-    labs(title = "Number of Stations Recording Each Element Over Time",
+    labs(
          x = "Year",
          y = "Number of Stations") +
     theme_minimal() +
     theme(plot.title = element_text(hjust = 0.5),
           legend.position = "none")
-
 
 ```
 

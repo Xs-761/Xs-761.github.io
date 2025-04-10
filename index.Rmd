@@ -1,30 +1,23 @@
 ---
-title: "P8105_HW4_EZ2384"
+title: "Welcome to My Page!"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-### Welcome to My Homepage!
+### Resume
 
-Hi! I am a graduate student in Biostatistics Department with a background in Applied Mathematics. I’m passionate about using data to solve real-world problems and have experience in data analysis, cybersecurity, and business analytics. I love exploring new tools and techniques in data science to make meaningful insights. Outside of work and studies, you might find me enjoying a game of tennis or diving into a good book. Thanks for stopping by my page!
-
-#### My Favoriate Time in a Day
-<img src="images/01.jpg" style="width:75%">
-
-#### My Hobby
-<img src="images/02.jpg" style="width:75%">
-
-## My Resume
 [View My Resume](Resume.pdf)
 
-## Local Image
+### About Me
 
-View
+```         
+    Hi! I’m Enju Zhang, a passionate data analyst currently pursuing my Master’s degree in Biostatistics at Columbia University expecting to graduate in May.2025. I specialize in applying statistical methods and programming to solve real-world problems in clinical research and public health.
+    I bring hands-on experience from internships at BojiMed, Alibaba, and PwC, where I contributed to clinical trial data processing (CDISC, ADaM, SDTM), business analytics, and data privacy compliance. My technical toolkit includes SAS, R, Python, SQL, and Tableau, and I’m certified in advanced SAS and IBM Data Analytics.
+    My career goal is to work in a data analytics role at a Pharmaceutical or CRO company, where I can contribute to evidence-based healthcare solutions using data-driven insights.
+```
 
+Feel free to explore my [projects](https://github.com/Xs-761?tab=repositories) or [connect](mailto:ez2384@cumc.columbia.edu)!
 
-
-## Link to page within the site
-
-[About me](within_page.html)
+<img src="images/01.jpg" width="100%"/>
