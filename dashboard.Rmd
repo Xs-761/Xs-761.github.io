@@ -10,7 +10,6 @@ output:
 ---
 
 ```{r block1, include=FALSE}
-
   library(tidyverse)
   library(p8105.datasets)
   library(plotly)
@@ -18,75 +17,64 @@ output:
   library(dplyr)
   library(rnoaa)
   library(ggplot2)
-
 ```
 
 ```{r block2, include=FALSE, message=FALSE, fig.height=7.5, fig.width=12.5}
-
   load("nynoaadat.RData")
   nydat = nydat %>% drop_na()
   nystationids = nystationids %>% drop_na()
   stations = stations %>% drop_na()
-
 ```
-
-
 
 ### Spatial Distribution of NOAA GHCN Weather Stations by Elevation
 
 ```{r block3, message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
-  
   # Scatterplot of station locations with color representing elevation
-  ggplot(stations, aes(x = longitude, y = latitude, color = elevation)) +
-    geom_point(alpha = 0.7, size = 0.35) +
-    scale_color_viridis_c(option = "C") +  # Use a color gradient suitable for elevation
-    labs(
-         x = "Longitude",
-         y = "Latitude",
-         color = "Elevation (m)") +
-    theme_minimal() +
-    theme(plot.title = element_text(hjust = 0.5))
-
-
+  p1 <- ggplot(stations, aes(x = longitude, y = latitude, color = elevation)) +
+        geom_point(alpha = 0.7, size = 0.35) +
+        scale_color_viridis_c(option = "C") +  # Use a color gradient suitable for elevation
+        labs(
+             x = "Longitude",
+             y = "Latitude",
+             color = "Elevation (m)") +
+        theme_minimal() +
+        theme(plot.title = element_text(hjust = 0.5) )
+  plotly::ggplotly(p1)
 ```
 
 ### Distribution of Weather Station Elevations Grouped by Recorded Element
 
 ```{r block4,message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
-
   # Boxplot of elevation by element
-  ggplot(stations, aes(x = element, y = elevation)) +
-    geom_boxplot(fill = "lightgreen", outlier.size = 0.5, outlier.alpha = 0.5) +
-    labs(
-         x = "Element",
-         y = "Elevation (m)") +
-    theme_minimal() +
-    theme(
-      plot.title = element_text(hjust = 0.5),
-      axis.text.x = element_text(angle = 45, hjust = 1, size = 5) 
-    )
-
+  p2 <- ggplot(stations, aes(x = element, y = elevation)) +
+        geom_boxplot(fill = "lightgreen", outlier.size = 0.5, outlier.alpha = 0.5) +
+        labs(
+             x = "Element",
+             y = "Elevation (m)") +
+        theme_minimal() +
+        theme(
+          plot.title = element_text(hjust = 0.5),
+          axis.text.x = element_text(angle = 45, hjust = 1, size = 5) )
+  plotly::ggplotly(p2)
 ```
 
 ### Temporal Coverage of Meteorological Elements in Global Station Records
 
 ```{r block5, message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
-
   # Summarize data to get the number of stations recording each element by year
   yearly_counts <- stations %>%
                     group_by(first_year, element) %>%
                     summarise(station_count = n()) %>%
                     ungroup()
-
 # Line plot of station counts by year for each element with no legend
-  ggplot(yearly_counts, aes(x = first_year, y = station_count, color = element, size=0.5)) +
-    geom_line(size = 0.4) +
-    labs(
-         x = "Year",
-         y = "Number of Stations") +
-    theme_minimal() +
-    theme(plot.title = element_text(hjust = 0.5),
-          legend.position = "none")
-
+  p3 <- ggplot(yearly_counts, aes(x = first_year, y = station_count, color = element, size=0.5)) +
+        geom_line(size = 0.4) +
+        labs(
+             x = "Year",
+             y = "Number of Stations") +
+        theme_minimal() +
+        theme(plot.title = element_text(hjust = 0.5),
+              legend.position = "none")
+  plotly::ggplotly(p3)
 ```
 
