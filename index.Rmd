@@ -6,24 +6,57 @@ output:
     toc_float: true
 ---
 
-### Resume
+### About Me --- [View My Resume](Resume.pdf)
 
-[View My Resume](Resume.pdf)
-
-### About Me
-
-```         
+<img src="images/selfie.jpg" width="25%"/>
+```   
     Hi! I’m Enju Zhang, a passionate data analyst currently pursuing my Master’s degree in Biostatistics at Columbia University expecting to graduate in May.2025. I specialize in applying statistical methods and programming to solve real-world problems in clinical research and public health.
     I bring hands-on experience from internships at BojiMed, Alibaba, and PwC, where I contributed to clinical trial data processing (CDISC, ADaM, SDTM), business analytics, and data privacy compliance. My technical toolkit includes SAS, R, Python, SQL, and Tableau, and I’m certified in advanced SAS and IBM Data Analytics.
     My career goal is to work in a data analytics role at a Pharmaceutical or CRO company, where I can contribute to evidence-based healthcare solutions using data-driven insights.
 ```
 
-### Don't forget to take a look at my projects on the top right corner :)
+<br>
 
-```         
-Project Description:
-- R project sample
-- Interactive Dashboard
-```
+### Project Description
 
-<img src="images/01.jpg" width="100%"/>
+-   [**R project sample**](r_proj.html)
+
+    -   Implements a complete data analysis workflow using NYC rental prices (2015–2018), U.S. housing prices (2023), and ZIP code metadata scraped from public websites.
+    -   Performs data wrangling: cleaning, reshaping, merging, and correcting ZIP-level inconsistencies and missing values.
+    -   Produces four analytical tables: borough-level trends, year-over-year rental changes, neighborhoods with largest rental drops during COVID-19, and ZIP-level housing prices.
+    -   Features three well-labeled and styled ggplot2 visualizations: rental price trends, housing price distributions across states, and the relationship between NYC housing and rental prices.
+
+-   [**Interactive Dashboard**](dashboard.html)
+
+    -   Built using `flexdashboard` and `plotly` to create an interactive, user-friendly visualization of NOAA GHCN weather station metadata.
+
+    -   **[Row 1]** Geospatial scatterplot of station locations by elevation & Time-series line plot of meteorological element coverage over time.
+
+    -   **[Row 2]** Full-width boxplot showing elevation distributions by recorded element type.
+
+-   [**Plotly Examples**](plotly.html)
+
+    -   A simple interactive data visualization project using Airbnb listings in Manhattan. Data is filtered to include only "Entire home/apt" listings with prices between \$100 and \$500. Ratings are derived from `review_scores_location` and plotted alongside price and location.
+
+    -   Demonstrates four types of interactive Plotly visualizations:
+
+        -   **Scatterplot**: Maps each listing by latitude and longitude, colored by price with interactive tooltips.
+
+        -   **Boxplot**: Compares price distributions across neighborhoods, with reordered factor levels and smaller outlier points for clarity.
+
+        -   **Barplot**: Displays the number of listings in each neighborhood.
+
+        -   **ggplotly**: Converts a ggplot-based map into an interactive Plotly object.
+
+<br>
+
+### Favorite Life Elements 
+
+<div style="text-align: center;">
+  <img src="images/background.jpg" width="250" height="175"/>
+  <img src="images/dog.jpg" width="250" height="175"/>
+  <img src="images/paint.jpg" width="250" height="175"/>
+  <img src="images/travel.jpg" width="250" height="175"/>
+  <img src="images/board.jpg" width="250" height="175"/>
+  <img src="images/piano.jpg" width="250" height="175"/>
+</div>

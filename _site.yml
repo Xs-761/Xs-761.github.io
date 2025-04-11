@@ -7,6 +7,8 @@ navbar:
       href: r_proj.html
     - text: "Interactive Dashboard"
       href: dashboard.html
+    - text: "Plotly Examples"
+      href: plotly.html
     - icon: fa-envelope fa-lg
       href: mailto:<zhangenju1999121@gmail.com>
     - icon: fa-github fa-lg
