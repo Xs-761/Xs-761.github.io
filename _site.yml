@@ -5,7 +5,7 @@ navbar:
   right:
     - text: "R project sample"
       href: r_proj.html
-    - text: "Dashboard"
+    - text: "Interactive Dashboard"
       href: dashboard.html
     - icon: fa-envelope fa-lg
       href: mailto:<zhangenju1999121@gmail.com>
