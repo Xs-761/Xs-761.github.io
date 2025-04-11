@@ -7,7 +7,6 @@ output:
 ---
 
 # Examples of Plotly
-
 ```{r Load Packages, include=FALSE}
   library(tidyverse)
   library(p8105.datasets)
@@ -32,7 +31,6 @@ output:
 ## Plotly Plots
 
 ### Scatterplot
-
 ```{r}
   nyc_airbnb |>
     mutate(text_label = str_c("Price: $", price, "\nRating: ", rating)) |> 
@@ -42,7 +40,6 @@ output:
 ```
 
 ### Boxplot
-
 ```{r}
   nyc_airbnb |> 
     mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
@@ -50,7 +47,6 @@ output:
 ```
 
 ### Barplot
-
 ```{r}
   nyc_airbnb |> 
     count(neighbourhood) |> 
@@ -59,7 +55,6 @@ output:
 ```
 
 ### ggplotly
-
 ```{r}
   ggscatter = 
     nyc_airbnb %>% 
