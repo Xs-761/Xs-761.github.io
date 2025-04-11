@@ -10,7 +10,7 @@ output:
       - { title: "🏠 Back to Homepage", href: "../index.html" }
 ---
 
-Row
+Row {data-height=500}
 -------------------------------------
 
 ### Station Locations by Elevation {.column width="50%"}
