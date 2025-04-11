@@ -3,6 +3,7 @@ title: "Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
+    self_contained: false
     vertical_layout: fill
     source: embed
     navbar:
@@ -30,7 +31,7 @@ nydat <- nydat %>% drop_na()
 nystationids <- nystationids %>% drop_na()
 
 # Clean and filter stations (also downsample for plot size)
-stations <- stations %>% drop_na() %>% sample_n(100000)
+stations <- stations %>% drop_na() %>% sample_n(25000)
 
 ```
 
