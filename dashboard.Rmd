@@ -9,12 +9,6 @@ output:
     navbar:
       - { title: "🏠 Back to Homepage", href: "../index.html" }
 ---
-
-Row {data-height=500}
--------------------------------------
-
-### Station Locations by Elevation {.column width="50%"}
-
 ```{r block1, include=FALSE}
   library(tidyverse)
   library(p8105.datasets)
@@ -40,6 +34,8 @@ stations <- stations %>% drop_na() %>% sample_n(10000)
 
 ```
 
+Row {data-height=500}
+-------------------------------------
 ### Spatial Distribution of NOAA GHCN Weather Stations by Elevation {.column width="50%"}
 
 ```{r block3, message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
@@ -56,23 +52,7 @@ stations <- stations %>% drop_na() %>% sample_n(10000)
   plotly::ggplotly(p1)
 ```
 
-### Distribution of Weather Station Elevations Grouped by Recorded Element {.column width="100%"}
-
-```{r block4,message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
-  # Boxplot of elevation by element
-  p2 <- ggplot(stations, aes(x = element, y = elevation)) +
-        geom_boxplot(fill = "lightgreen", outlier.size = 0.5, outlier.alpha = 0.5) +
-        labs(
-             x = "Element",
-             y = "Elevation (m)") +
-        theme_minimal() +
-        theme(
-          plot.title = element_text(hjust = 0.5),
-          axis.text.x = element_text(angle = 45, hjust = 1, size = 5) )
-  plotly::ggplotly(p2)
-```
-
-### Temporal Coverage of Meteorological Elements in Global Station Records
+### Temporal Coverage of Meteorological Elements in Global Station Records {.column width="50%"}
 
 ```{r block5, message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
   # Summarize data to get the number of stations recording each element by year
@@ -91,4 +71,23 @@ stations <- stations %>% drop_na() %>% sample_n(10000)
               legend.position = "none")
   plotly::ggplotly(p3)
 ```
+
+Row {data-height=500}
+-------------------------------------
+### Distribution of Weather Station Elevations Grouped by Recorded Element {.column width="100%"}
+
+```{r block4,message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
+  # Boxplot of elevation by element
+  p2 <- ggplot(stations, aes(x = element, y = elevation)) +
+        geom_boxplot(fill = "lightgreen", outlier.size = 0.5, outlier.alpha = 0.5) +
+        labs(
+             x = "Element",
+             y = "Elevation (m)") +
+        theme_minimal() +
+        theme(
+          plot.title = element_text(hjust = 0.5),
+          axis.text.x = element_text(angle = 45, hjust = 1, size = 5) )
+  plotly::ggplotly(p2)
+```
+
 
