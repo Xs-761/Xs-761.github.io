@@ -20,10 +20,18 @@ output:
 ```
 
 ```{r block2, include=FALSE, message=FALSE, fig.height=7.5, fig.width=12.5}
-  load("nynoaadat.RData")
-  nydat = nydat %>% drop_na()
-  nystationids = nystationids %>% drop_na()
-  stations = stations %>% drop_na()
+# Load pre-saved data
+load("nynoaadat.RData")
+
+# Clean and filter nydat
+nydat <- nydat %>% drop_na()
+
+# Clean nystationids
+nystationids <- nystationids %>% drop_na()
+
+# Clean and filter stations (also downsample for plot size)
+stations <- stations %>% drop_na() %>% sample_n(100000)
+
 ```
 
 ### Spatial Distribution of NOAA GHCN Weather Stations by Elevation
