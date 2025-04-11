@@ -2,13 +2,18 @@
 title: "Dashboard"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
     self_contained: false
+    orientation: rows
     vertical_layout: fill
     source: embed
     navbar:
       - { title: "🏠 Back to Homepage", href: "../index.html" }
 ---
+
+Row
+-------------------------------------
+
+### Station Locations by Elevation {.column width="50%"}
 
 ```{r block1, include=FALSE}
   library(tidyverse)
@@ -31,11 +36,11 @@ nydat <- nydat %>% drop_na()
 nystationids <- nystationids %>% drop_na()
 
 # Clean and filter stations (also downsample for plot size)
-stations <- stations %>% drop_na() %>% sample_n(25000)
+stations <- stations %>% drop_na() %>% sample_n(10000)
 
 ```
 
-### Spatial Distribution of NOAA GHCN Weather Stations by Elevation
+### Spatial Distribution of NOAA GHCN Weather Stations by Elevation {.column width="50%"}
 
 ```{r block3, message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
   # Scatterplot of station locations with color representing elevation
@@ -51,7 +56,7 @@ stations <- stations %>% drop_na() %>% sample_n(25000)
   plotly::ggplotly(p1)
 ```
 
-### Distribution of Weather Station Elevations Grouped by Recorded Element
+### Distribution of Weather Station Elevations Grouped by Recorded Element {.column width="100%"}
 
 ```{r block4,message=FALSE, warning=FALSE, fig.height=7.5, fig.width=12.5}
   # Boxplot of elevation by element
